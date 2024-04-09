@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerNavigation : MonoBehaviour
 {
+    GameManager gameManager;
     public string goalTag = "Goal";
 
     [SerializeField]
@@ -16,9 +17,19 @@ public class PlayerNavigation : MonoBehaviour
     private GameObject currentGoal;
     private List<GameObject> goals;
 
-    private void Start()
+    void Awake()
     {
+        GameManager.OnLevelLoaded += OnLevelLoaded;
         agent = GetComponent<NavMeshAgent>();
+    }
+    
+    void OnDestroy()
+    {
+        GameManager.OnLevelLoaded -= OnLevelLoaded;
+    }
+
+    private void OnLevelLoaded()
+    {
         goals = GameObject.FindGameObjectsWithTag(goalTag).ToList();
         UpdateDestination();
     }
@@ -27,30 +38,29 @@ public class PlayerNavigation : MonoBehaviour
     {
         if (other.gameObject.CompareTag(goalTag))
         {
-            var goalTransform = other.gameObject.transform;
-            var resettable = goalTransform.GetComponent<IResettable>();
-
-            goalTransform.SetParent(backpack.transform);
-            goalTransform.localPosition = Random.insideUnitSphere * 0.5f;
-            goalTransform.localRotation = Random.rotation;
-
-            if (resettable != null) resettable.Reset();
             collectedGoals.Add(other.gameObject);
-            UpdateDestination();
+            AddToBackpack(other);
+            if(other.gameObject == currentGoal)
+                UpdateDestination();
         }
+    }
+
+    private void AddToBackpack(Collision other)
+    {
+        var goalTransform = other.gameObject.transform;
+        goalTransform.SetParent(backpack.transform);
+        goalTransform.localPosition = Random.insideUnitSphere * 0.5f;
+        goalTransform.localRotation = Random.rotation;
     }
 
     private void UpdateDestination()
     {
         goals.RemoveAll(goal => collectedGoals.Contains(goal));
-
         if (goals.Count == 0)
             return;
-
         currentGoal = goals[Random.Range(0, goals.Count)];
-
-        if (currentGoal != null) agent.SetDestination(currentGoal.transform.position);
-
-        collectedGoals.Clear();
+        agent.SetDestination(currentGoal.transform.position);
+        
     }
+    
 }

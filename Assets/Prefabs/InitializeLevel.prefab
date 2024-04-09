@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &252683830347776428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2639383432688123002}
+  - component: {fileID: 8455051913995493324}
+  m_Layer: 0
+  m_Name: InitializeLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2639383432688123002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252683830347776428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6306996, y: 1.3612195, z: -5.852771}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8455051913995493324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252683830347776428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c84cbdd8ac4dd6b56dc0979a0107a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaScipt: "function degreesToRadians(degrees)\r\n    return degrees * math.pi /
+    180\r\nend\r\n\r\nfunction circleSpawn(radius)\r\n\r\n        for angle = 30,
+    360, 30 do\r\n            local radians = degreesToRadians(angle)\r\n           
+    local x = radius * math.cos(radians)\r\n            local y = radius * math.sin(radians)\r\n\r\t 
+    SpawnLevelPiece('Goal', Vector3(x, 1.5, y), Quaternion.Euler(0,0,0))\n       
+    end\r\n\r\nend\r\n\r\ncircleSpawn(10)\n"
+  levelPieces:
+  - {fileID: 8233246504007074284, guid: 4a4f0b273cb2d6b48ba94f97f6944130, type: 3}
