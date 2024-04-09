@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8fb696693dc174ef7b58af6c5943ee38
+timeCreated: 1475786654
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/CoreLib/TableIteratorsModule.cs
+  uploadId: 141783

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3a91440692a5f477cbbcda0519a017e2
+timeCreated: 1475786653
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/DataTypes/IScriptPrivateResource.cs
+  uploadId: 141783

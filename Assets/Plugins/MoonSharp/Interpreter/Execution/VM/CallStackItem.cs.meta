@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b0ca8870651834b14b0d156d519c4fd5
+timeCreated: 1475786655
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/CallStackItem.cs
+  uploadId: 141783

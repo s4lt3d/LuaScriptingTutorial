@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c3b76552db4154323bf03ab9a17c9726
+timeCreated: 1475786655
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/DataStructs/Slice.cs
+  uploadId: 141783

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f2985effb32c74d16bb8c4fbbc607c19
+timeCreated: 1475786656
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/Interop/LuaStateInterop/CharPtr.cs
+  uploadId: 141783

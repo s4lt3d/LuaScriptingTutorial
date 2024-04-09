@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 77aed18c39bbf4622b4f89b55462f9fe
+timeCreated: 1475786654
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/Execution/VM/Processor/Processor_BinaryDump.cs
+  uploadId: 141783

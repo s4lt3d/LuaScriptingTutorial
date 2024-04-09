@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 47df7bd1ab9d64724a8f364747e1f599
+timeCreated: 1476432881
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 33776
+  packageName: MoonSharp
+  packageVersion: 2.0.0.1
+  assetPath: Assets/Plugins/MoonSharp/Interpreter/Loaders/UnityAssetsScriptLoader.cs
+  uploadId: 141783
