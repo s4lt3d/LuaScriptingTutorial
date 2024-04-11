@@ -59,7 +59,9 @@ public class PlayerNavigation : MonoBehaviour
         if (goals.Count == 0)
             return;
         currentGoal = goals[Random.Range(0, goals.Count)];
-        agent.SetDestination(currentGoal.transform.position);
+
+        if(!agent.SetDestination(currentGoal.transform.position))
+            Debug.LogError("Could not set destination");
         
     }
     

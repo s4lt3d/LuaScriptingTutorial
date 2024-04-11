@@ -1,9 +1,11 @@
 using System;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static event Action OnLevelLoaded;
+    public static event Action OnGameStart;
     
     public static GameManager Instance { get; private set; }
     
@@ -25,7 +27,6 @@ public class GameManager : MonoBehaviour
     public void LevelLoaded()
     {
         OnLevelLoaded?.Invoke();
+        OnGameStart?.Invoke();
     }
-    
-
 }
