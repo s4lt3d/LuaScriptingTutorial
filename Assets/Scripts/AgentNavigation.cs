@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerNavigation : MonoBehaviour
+public class AgentNavigation : MonoBehaviour
 {
     GameManager gameManager;
     public string goalTag = "Goal";
@@ -19,35 +19,35 @@ public class PlayerNavigation : MonoBehaviour
 
     void Awake()
     {
-        GameManager.OnLevelLoaded += OnLevelLoaded;
+        GameManager.OnGameStart += OnGameStart;
         agent = GetComponent<NavMeshAgent>();
     }
     
     void OnDestroy()
     {
-        GameManager.OnLevelLoaded -= OnLevelLoaded;
+        GameManager.OnLevelLoaded -= OnGameStart;
     }
 
-    private void OnLevelLoaded()
+    private void OnGameStart()
     {
         goals = GameObject.FindGameObjectsWithTag(goalTag).ToList();
         UpdateDestination();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(goalTag))
         {
             collectedGoals.Add(other.gameObject);
-            AddToBackpack(other);
+            AddToBackpack(other.gameObject.transform);
             if(other.gameObject == currentGoal)
                 UpdateDestination();
         }
     }
 
-    private void AddToBackpack(Collision other)
+    private void AddToBackpack(Transform other)
     {
-        var goalTransform = other.gameObject.transform;
+        var goalTransform = other;
         goalTransform.SetParent(backpack.transform);
         goalTransform.localPosition = Random.insideUnitSphere * 0.5f;
         goalTransform.localRotation = Random.rotation;
@@ -62,7 +62,5 @@ public class PlayerNavigation : MonoBehaviour
 
         if(!agent.SetDestination(currentGoal.transform.position))
             Debug.LogError("Could not set destination");
-        
     }
-    
 }

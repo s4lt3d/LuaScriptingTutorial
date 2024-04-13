@@ -1,5 +1,4 @@
 using System;
-using Unity.AI.Navigation;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour

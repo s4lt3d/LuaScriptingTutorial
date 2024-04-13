@@ -1,14 +1,12 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Hover : MonoBehaviour, IResettable
+public class Hover : MonoBehaviour
 {
-    [FormerlySerializedAs("setting")]
-    [FormerlySerializedAs("hoverSettings")]
     [SerializeField]
-    HoverSettings settings;
+    HoverSettings hover;
     
     private Vector3 startPosition;
+    private Vector3 startOffset;
     
     void Start()
     {
@@ -17,16 +15,12 @@ public class Hover : MonoBehaviour, IResettable
     
     void Update()
     {
-        transform.localPosition = startPosition + Vector3.up * (Mathf.Sin(startPosition.x + Time.realtimeSinceStartup * settings.hoverTime) * settings.hoverHeight);
+        transform.localPosition = hover.CalclateHover(Time.time);
     }
 
     public void Reset()
     {
-        startPosition = transform.localPosition;
+        hover.StartPosition = transform.localPosition;
+        hover.StartOffset = transform.position;
     }
-}
-
-public interface IResettable
-{
-    public void Reset();
 }

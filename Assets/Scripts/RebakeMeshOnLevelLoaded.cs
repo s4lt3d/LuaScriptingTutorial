@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class RebakeMeshOnLevelLoaded : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        GameManager.OnLevelLoaded += OnLevelLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void OnLevelLoaded()
     {
-        
+        NavMeshSurface surface = GetComponent<NavMeshSurface>();
+        surface.BuildNavMesh();
     }
 }
+
