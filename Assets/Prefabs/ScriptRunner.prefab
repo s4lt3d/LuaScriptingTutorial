@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4956499578039146870}
   - component: {fileID: 4152242297175532923}
+  - component: {fileID: 1566770462523413786}
   m_Layer: 0
   m_Name: ScriptRunner
   m_TagString: Untagged
@@ -44,3 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040b17e72b8628b49be2ec44d4346a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1566770462523413786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814960664237883823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c84cbdd8ac4dd6b56dc0979a0107a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luaSciptFileName: level_0
+  levelPieces:
+  - {fileID: 8233246504007074284, guid: 4a4f0b273cb2d6b48ba94f97f6944130, type: 3}
+  - {fileID: 8686474564230806335, guid: 4b618cd27479be746b88dfbf585dedf6, type: 3}
+  - {fileID: 3329287821293876696, guid: 142553488c24a05469945abd17956fe7, type: 3}

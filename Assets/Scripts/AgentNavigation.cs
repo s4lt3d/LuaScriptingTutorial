@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class AgentNavigation : MonoBehaviour
 {
     GameManager gameManager;
+    
     public string goalTag = "Goal";
 
     [SerializeField]
@@ -38,11 +39,16 @@ public class AgentNavigation : MonoBehaviour
     {
         if (other.gameObject.CompareTag(goalTag))
         {
-            collectedGoals.Add(other.gameObject);
-            AddToBackpack(other.gameObject.transform);
-            if(other.gameObject == currentGoal)
-                UpdateDestination();
+            HandleGoal(other);
         }
+    }
+
+    private void HandleGoal(Collider other)
+    {
+        collectedGoals.Add(other.gameObject);
+        AddToBackpack(other.gameObject.transform);
+        if(other.gameObject == currentGoal)
+            UpdateDestination();
     }
 
     private void AddToBackpack(Transform other)

@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[InitializeOnLoad] // Ensure the class is initialized on load
-public class CameraViewTool
+[InitializeOnLoad]
+public class LockViewToCameraTool
 {
     private static bool isCameraViewEnabled;
+    
+    private const string MenuPath = "Tools/Lock Scene View to Camera";
 
-    // Key for saving the state in EditorPrefs
-    private const string CameraViewEnabledPrefKey = "CameraViewTool_IsEnabled";
+    private const string CameraViewEnabledPrefKey = "LockViewToCameraTool_IsEnabled";
 
-    static CameraViewTool()
+    static LockViewToCameraTool()
     {
-        // Load the saved state when the class is initialized
         isCameraViewEnabled = EditorPrefs.GetBool(CameraViewEnabledPrefKey, false);
         if (isCameraViewEnabled)
         {
@@ -25,20 +25,18 @@ public class CameraViewTool
     {
         if (state == PlayModeStateChange.EnteredPlayMode || state == PlayModeStateChange.ExitingPlayMode)
         {
-            // Ensure the menu item checkbox reflects the current state
-            Menu.SetChecked("Tools/Camera View Toggle", isCameraViewEnabled);
+            Menu.SetChecked(MenuPath, isCameraViewEnabled);
         }
     }
 
-    [MenuItem("Tools/Camera View Toggle", priority = 1)]
+    [MenuItem(MenuPath, priority = 1)]
     private static void ToggleCameraView()
     {
         isCameraViewEnabled = !isCameraViewEnabled;
 
-        // Save the state to EditorPrefs
         EditorPrefs.SetBool(CameraViewEnabledPrefKey, isCameraViewEnabled);
 
-        Menu.SetChecked("Tools/Camera View Toggle", isCameraViewEnabled);
+        Menu.SetChecked(MenuPath, isCameraViewEnabled);
 
         if (isCameraViewEnabled)
         {
